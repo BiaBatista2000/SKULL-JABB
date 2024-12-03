@@ -1,0 +1,768 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    margin: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    background-color:  #af22d6;
+    overflow-x: hidden;
+    
+}
+
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ /* CSS do dropdown de idiomas */
+ .dropdown {
+    display: none; /* Oculta as opções inicialmente */
+    position: absolute;
+    top:58px; /* Ajuste conforme necessário */
+    right: 62px; /* Ajuste conforme necessário */
+    background-color: #a175af;
+    border: 1.5px solid black;
+    z-index: 100;
+    width: 130px; /* Ajuste a largura conforme necessário */
+    max-height: 200px; /* Altura máxima para o dropdown */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    overflow-x: hidden; /* Oculta rolagem horizontal */
+}
+.dropdown::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 20px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do fundo */
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+    height: 70px; /* Aumente o valor conforme necessário */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #584757; /* Cor do "polegar" ao passar o mouse */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+}
+
+.dropdown .language-option {
+    text-align: left;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: -10px;
+    word-spacing: -10px; /* Ajuste o valor conforme necessário */
+    transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+    font-style: normal; /* Garante que o texto não fique em itálico */
+}
+
+.dropdown .language-option:hover {
+    background-color: #cf91e4; /* Efeito de hover */
+    text-decoration: underline; /* Sublinhado no hover */
+    font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    color: #fff; 
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #FFFF;
+    border: none;
+    padding: 8px 30px 8px 8px; /* Dá espaço para o ícone no lado direito */
+    color: #000;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 200px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: white;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #949494;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color: #B77ECA; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color: #B77ECA;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #E1B2FF;
+    color: white;
+}
+
+.mdi {
+    color: white;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.lupa {
+    color: #949494;
+}
+
+.mdi:hover {
+    color: #B77ECA;
+}
+
+.lupa   {
+    color: #949494;
+
+}
+
+
+
+/*Página "Compra" do Site:*/
+
+.Tudo01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    font-size: smaller;
+    color: #f0f0f0;
+    text-align: left;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Tudo01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Resumo {
+    border-radius: 10px;
+    background-color: #B77ECA;
+    display: flex; /* Usa flexbox para alinhar os itens */
+    justify-content: space-between; /* Coloca espaço entre os itens */
+    max-width: 100%; /* ou ajuste conforme necessário */
+  }
+  
+  .resumo-do-pedido {
+    margin: 0 10px; /* Espaçamento horizontal */
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    left: 200px;
+    white-space: nowrap;
+  }
+  
+  .Setas {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    position: relative; /* Necessário para o alinhamento absoluto */
+    width: 100%; /* Define a largura do contêiner */
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .Seta2 {
+    /* Ajuste de largura e altura para acomodar a seta */
+    width: 65px;  /* Ajustei para garantir que o ícone caiba bem */
+    height: 65px; /* Altura igual para garantir o alinhamento perfeito */
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #4F1E64;
+    
+    /* Flexbox para centralizar o ícone */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+  }
+  
+  .Seta {
+    font-size: 75px; /* Tamanho grande do ícone */
+    color: white; /* Cor do ícone */
+    display: inline-block; /* Garante o comportamento adequado */
+    text-align: center; /* Centraliza o ícone dentro do contêiner */
+    margin: 0; /* Remove qualquer margem indesejada */
+  }
+  
+.Forma {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1305px;
+    height: 346px;
+    top: 116px;
+    margin-right: 40px;
+    display: flex;
+}
+.Retangulo01 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    left: 25px;
+    width: 100%;
+    max-width: 1293px;
+    height: 346px;
+    background-color: #B77ECA;
+    border-radius: 5px;
+}
+.Retangulo-1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    top: 287px;
+    left: 29px;
+    border-radius: 5px;
+    position: absolute;
+    background-color:#4F1E64;
+}
+.pontos-a-ganhar {
+    position: absolute;
+    width: 100%;
+    max-width: 477px;
+    top: 5px;
+    left: 23px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Reais {
+    width: 100%;
+    max-width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 20px;
+    position: absolute;
+    object-fit: cover;
+}
+.imgCeleste {
+    width: 100%;
+    max-width: 320px;
+    height: 170px;
+    top: 89px;
+    left: 29px;
+    position: absolute;
+    object-fit: cover;
+}
+.item {
+    position: absolute;
+    width: 100%;
+    max-width: 135px;
+    top: 12px;
+    left: 42px;
+    font-family: Verdana;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 3px;
+    
+}
+.DescriçãoCeleste {
+    position: absolute;
+    width: 100%;
+    max-width: 430px;
+    top: 94px;
+    left: 358px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Valor {
+    position: absolute;
+    width: 100%;
+    max-width: 141px;
+    top: 18px;
+    left: 1088px;
+    font-family: "Verdana";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: 2;
+    line-height: normal;
+}
+.Linha1 {
+    position: absolute;
+    width: 100%;
+    max-width: 4px;
+    height: 148px;
+    top: 20px;
+    left: 1273px;
+}
+.Retangulo02 {
+    position: absolute;
+    width: 201px;
+    height: 88px;
+    top: 93px;
+    left: 1047px;
+}
+.Retangulo-2 { 
+    width: 100%;
+    max-width: 201px;
+    height: 87px;
+    top: 1px;
+    left: 0;
+    position: absolute;
+    background-color:#4F1E64;
+    border-radius: 5px;
+}
+.Estilo {
+    position: absolute;
+    width: 100%;
+    max-width:201px;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Preço {
+    text-decoration: line-through
+}
+.Desconto {
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+}
+.Subtotal {
+    position: absolute;
+    width: 100%;
+    max-width: 141px;
+    top: 223px;
+    left: 1088px;
+    font-family: "Verdana";
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2;
+    line-height: normal;
+   
+    
+}
+.SubtotalFinal{
+    position: absolute;
+    width: 100%;
+    max-width: 135px;
+    top: 265px;
+    left: 1088px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+   
+}
+.Retangulo03 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1310px;
+    height: 100px;
+
+    left: 30px;
+}
+.Retangulo-3 {
+    position: relative;
+    width: 100%;
+    max-width: 1299px;
+    height: 100px;
+    background-color: #B77ECA;
+    border-radius: 5px;
+    left: 5px;
+}
+.linha {
+  position: absolute;
+  top: 70%; /* Adjust the vertical position as needed */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the line height */
+  background-color: #fff; /* Adjust the line color */
+}
+.Linha2 {
+    position: absolute;
+    width: 2000px;
+    height: 5px;
+    top: 70px;
+    right: 50px;
+    object-fit: cover;
+}
+.Linha3 {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 70px;
+    left: 1150px;
+    object-fit: cover;
+}
+.TotalFinal {
+    position: absolute;
+    width: 109px;
+    top: 76px;
+    left: 8px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+.Finalizar {
+    position: absolute;
+    width: 99px;
+    top: 70px;
+    left: 1170px;
+    font-family: Verdana;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: none;
+}
+.Finalizar a {
+    text-decoration: none;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+.Finalizar a:hover {
+    color: #7e518d; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+a {
+    color: white;
+}
+
+.Usuário {
+    position: absolute;
+    width: 818px;
+    top: 8px;
+    left: 10px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Total {
+    position: absolute;
+    width: 818px;
+    top: 26px;
+    left: 10px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Código {
+    position: absolute;
+    width: 818px;
+    top: 45px;
+    left: 10px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.Dados {
+    display: flex;
+    width: 100%;
+    max-width: 1301px;
+    height: 128px;
+    float: top;
+    left: 0;
+}
+.Retangulo04 {
+    left: 5px;
+    position: relative;
+    width: 100%;
+    max-width: 1293px;
+    height: 128px;
+    background-color:#B77ECA;
+    border-radius: 5px;
+}
+.Retangulo-4 {
+    width: 100%;
+    max-width: 560px;
+    height: 48px;
+    top: 72px;
+    left: 50px;
+    position: absolute;
+    background-color: #B77ECA;
+    border-radius: 5px;
+}
+.Barra-ao-Redor {
+    width: 100%;
+    max-width: 383px;
+    height: 48px;
+    top: 72px;
+    left: 823px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #B77ECA;
+}
+.Estilo-CPF {
+    background-color: #4F1E64;
+    border: none;
+    border-radius: 5px;
+    position: center;
+    width: 100%;
+    max-width: 355px;
+    margin-top: 5px;
+    width: 200px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 25px;
+
+    
+}
+
+.Estilo-CPF::placeholder {
+    color: #ffffff83;
+}
+
+.Pessoal {
+    position: absolute;
+    width: 100%;
+    max-width: 198px;
+    top: 12px;
+    left: 48px;
+    font-family: Verdana;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.nome {
+    position: absolute;
+    width: 280px;
+    height: 30px;
+    top: 35px;
+    left: 0px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    background-color: #4F1E64;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.nome::placeholder {
+        color: #ffffff7e;
+}
+
+.Nome {
+    position: absolute;
+    width: 280px;
+    height: 30px;
+    top: 45px;
+    left: 50px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+.CPF {
+    position: absolute;
+    width: 68px;
+    top: 45px;
+    left: 825px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+}
+.Linha4 {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    top: 25px;
+    left: 1270px;
+    object-fit: cover;
+}
+
+/* Footer */
+
+.footer {
+    padding: 10px;
+    background-color: #200A26;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 100px; /* Define a altura do footer */
+    text-align: center;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    flex-direction: column;
+}
+
+.footer .social-icons {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.footer p {
+    font-size: 14px;
+}
+

@@ -1,0 +1,372 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #9d22ba;
+    color: var(--font-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* CSS do dropdown de idiomas */
+    .dropdown {
+        display: none; /* Oculta as opções inicialmente */
+        position: absolute;
+        top:58px; /* Ajuste conforme necessário */
+        right: 62px; /* Ajuste conforme necessário */
+        background-color: #a175af;
+        border: 1.5px solid black;
+        z-index: 100;
+        width: 130px; /* Ajuste a largura conforme necessário */
+        max-height: 200px; /* Altura máxima para o dropdown */
+        overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+        overflow-x: hidden; /* Oculta rolagem horizontal */
+    }
+    .dropdown::-webkit-scrollbar {
+        width: 8px; /* Largura da barra de rolagem */
+        height: 20px;
+    }
+
+    .dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+        border-radius: 10px; /* Borda arredondada do fundo */
+    }
+
+    .dropdown::-webkit-scrollbar-thumb {
+        background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+        border-radius: 10px; /* Borda arredondada do "polegar" */
+        height: 70px; /* Aumente o valor conforme necessário */
+    }
+
+    .dropdown::-webkit-scrollbar-thumb:hover {
+        background: #584757; /* Cor do "polegar" ao passar o mouse */
+        border-radius: 10px; /* Borda arredondada do "polegar" */
+    }
+
+    .dropdown .language-option {
+        text-align: left;
+        padding: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        margin-bottom: -10px;
+        word-spacing: -10px; /* Ajuste o valor conforme necessário */
+        transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+        font-style: normal; /* Garante que o texto não fique em itálico */
+    }
+
+    .dropdown .language-option:hover {
+        background-color: #cf91e4; /* Efeito de hover */
+        text-decoration: underline; /* Sublinhado no hover */
+        font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+    }
+
+.no-underline {
+    text-decoration: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff; 
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-bottom: 4px;
+}
+
+.logo img {
+    height: 65px;
+    width: 60px;
+    margin-right: 10px;
+    padding-bottom: -10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #fff;
+    border: none;
+    padding: 13px 30px 14px 8px; /* Dá espaço para o ícone no lado direito */
+    color: #000;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 203px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #c0c0c0;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color: #9188ff; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color: #b77eca;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #e1b2ff !important;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdi {
+    color: #c0c0c0;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.mdi:hover {
+    color: #b77eca !important;
+}
+
+/* Mantém o estilo de conteúdo centralizado */
+.content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar {
+    width: 30%;
+    height: 900px;
+    background-color: #4f1e64; /* Cor do retângulo */
+    margin-top: 10px; /* Espaçamento entre o retângulo e a header */
+    margin-bottom: 100px;
+    border-radius: 7px; /* Se quiser cantos arredondados */
+    color: white;
+    float: left;
+    margin-left: 30px;
+    border: 1px solid black;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.sidebar::-webkit-scrollbar {
+    width: 13px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #a175af;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #a175af;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #b77eca;
+    scrollbar-width: thin;
+}
+
+/* Scrollbar no Firefox */
+.retangulo {
+    scrollbar-width: thin;
+    scrollbar-color: #4f1e64 #f1f1f1;
+}
+
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 20px; /* Ajuste este valor conforme necessário */
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente no centro */
+    justify-content: flex-start; /* Garante que o texto fique ao lado da imagem */
+}
+
+.sidebar ul li img {
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    width: 85px; /* Ajusta o tamanho da imagem */
+    height: 75px; /* Mantém a proporção da imagem */
+    margin: 0 10px;
+    border-radius: 2px;
+    border: 1px solid black; /* Azul claro */
+    box-sizing: border-box;
+}
+
+.main-content {
+    margin-left:650px; /* Ajusta a margem esquerda para corresponder à largura da sidebar */
+    padding: 20px;
+    padding-bottom: 100px; /* Adiciona espaço inferior para evitar sobreposição com o footer */
+    flex-grow: 1;
+    background-color: #4f1e64; /* Define a cor de fundo desejada */
+    color: #fff;
+    border-radius: 10px; /* Arredonda as bordas da main-content */
+    box-sizing: border-box; /* Inclui padding e bordas na altura total */
+}
+
+.main-content h2 {
+    margin-bottom: 20px;
+}
+
+.recent-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.recent-games .game {
+    width: 42%; /* Ajusta a largura conforme necessário */
+    text-align: center;
+}
+
+.recent-games .game img {
+    width: 250px;
+    height: 200px; /* Mantém a proporção */
+    margin-bottom: 10px; /* Espaço entre imagem e texto */
+    border-radius: 10px; /* Arredonda as bordas das imagens */
+}
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #200A26;
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    margin-bottom: -10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-bottom: 10px; /* Espaçamento abaixo dos ícones */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b77eca; /* Cor ao passar o mouse nos ícones */
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}

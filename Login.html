@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Skull Jabb</title>
+    <link rel="shortcut icon" href="img/Logo Roxa.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="Login.css">
+
+    <!-- Removed Bootstrap CSS -->
+</head>
+<body class="img-bg">
+
+    <!-- Optional JavaScript -->
+    <!-- Removed Bootstrap JavaScript and dependencies -->
+
+    <!-- Your custom HTML code -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="home atual.html"><img src="img/Purple.png" alt="Caveira branca sobre um fogo azul"></a>
+                <a href="home atual.html" class="no-underline"><span>SKULL <br> JABB </span></a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Procurar... " class="search-bar">
+                <i class="mdi mdi-magnify search-icon"></i> 
+            </div>
+            <nav class="menu">
+                <a href="home atual.html">Loja</a>
+                <a href="testecb.html">Comunidade</a>
+                <a href="Suporte.html">Suporte</a>
+            </nav>
+            <div class="icons">
+                <button class="btn" id="language-button">Idioma</button>
+                <a href="Login.html"><button class="btn">Login</button> </a>
+                <a href="Carrinho.html"><i class="mdi mdi-cart-outline icone"></i> </a>
+                <a href="Perfil.html"><i class="mdi mdi-camera-outline icone"></i> </a>
+            </div>
+            <div class="dropdown" id="language-options">
+                <div class="language-option" onclick="changeLanguage('pt')">Português</div>
+                <div class="language-option" onclick="changeLanguage('en')">Inglês</div>
+                <div class="language-option" onclick="changeLanguage('es')">Espanhol</div>
+                <div class="language-option" onclick="changeLanguage('fr')">Francês</div>
+                <div class="language-option" onclick="changeLanguage('de')">Alemão</div>
+                <div class="language-option" onclick="changeLanguage('it')">Italiano</div>
+                <div class="language-option" onclick="changeLanguage('ru')">Russo</div>
+                <div class="language-option" onclick="changeLanguage('jp')">Japonês</div>
+                <div class="language-option" onclick="changeLanguage('zh')">Chinês</div>
+                <div class="language-option" onclick="changeLanguage('zh-CN')">Chinês Mandarim</div>
+                <div class="language-option" onclick="changeLanguage('ar')">Árabe</div>
+                <div class="language-option" onclick="changeLanguage('ko')">Coreano</div>
+                <div class="language-option" onclick="changeLanguage('nl')">Holandês</div>
+                <div class="language-option" onclick="changeLanguage('sv')">Sueco</div>
+                <div class="language-option" onclick="changeLanguage('da')">Dinamarquês</div>
+                <div class="language-option" onclick="changeLanguage('fi')">Finlandês</div>
+                <div class="language-option" onclick="changeLanguage('no')">Norueguês</div>
+                <div class="language-option" onclick="changeLanguage('pl')">Polonês</div>
+                <div class="language-option" onclick="changeLanguage('tr')">Turco</div>
+                <div class="language-option" onclick="changeLanguage('hu')">Húngaro</div>
+                <div class="language-option" onclick="changeLanguage('cs')">Tcheco</div>
+            </div>
+        </div>
+    </header>
+
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+        </div>
+
+    <div class="page">
+        <form method="POST" class="form-login button">
+            <h1>Login</h1>
+            <label for="email">Nome de usuário ou e-mail</label>
+            <input type="email" id="email" class="placeholder" placeholder="Username@email.com" required autofocus>
+            <label for="password">Senha</label>
+            <input type="password" id="password" class="placeholder" placeholder="Minha senha" required>
+            <a href="Senha.html">Esqueci minha senha</a>
+            <button type="submit" class="login-btn"><p>Login</p></button>
+            <a href="#" class="erro-login">Efetuar login no sms</a>
+            <br>
+            <br>
+            <p class="p">Não possui conta? <a href="Cadastrar.html" class="cadastre-se">Cadastre-se</a></p>
+        </form>
+    </div>
+
+    <br><br><br>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/skulljabb/" target="_blank"><i class="mdi mdi2 mdi-instagram icone"></i> </a>
+            <a href="#" target="_blank"> <i class="mdi mdi2 mdi-whatsapp icone"></i> </a>
+            <a href="mailto:SkullJabb@gmail.com" target="_blank"><i class="mdi mdi2 mdi-email-outline"></i> </a>
+        </div>
+        <p>&copy; 2024 Skull Jabb - Todos os direitos reservados.</p>
+       </footer>
+
+    <script src="Login.js"></script>
+
+</body>
+</html>

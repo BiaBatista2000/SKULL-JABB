@@ -1,0 +1,384 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis globais */
+:root {
+    --primary-color: #0e0e0e;
+    --secondary-color: #242432;
+    --hover-color: #9188ff;
+    --font-color: white;
+    --font-color-secondary: #FDFDFD;
+    --font-size-large: 28px;
+    --border-color: white;
+}
+
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #200A26;
+    color: var(--font-color);
+    background-image: url(img/Fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;    
+}
+
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ /* CSS do dropdown de idiomas */
+ .dropdown {
+    display: none; /* Oculta as opções inicialmente */
+    position: absolute;
+    top:58px; /* Ajuste conforme necessário */
+    right: 62px; /* Ajuste conforme necessário */
+    background-color: #a175af;
+    border: 1.5px solid black;
+    z-index: 100;
+    width: 130px; /* Ajuste a largura conforme necessário */
+    max-height: 200px; /* Altura máxima para o dropdown */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    overflow-x: hidden; /* Oculta rolagem horizontal */
+}
+.dropdown::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 20px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do fundo */
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+    height: 70px; /* Aumente o valor conforme necessário */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #584757; /* Cor do "polegar" ao passar o mouse */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+}
+
+.dropdown .language-option {
+    text-align: left;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: -10px;
+    word-spacing: -10px; /* Ajuste o valor conforme necessário */
+    transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+    font-style: normal; /* Garante que o texto não fique em itálico */
+}
+
+.dropdown .language-option:hover {
+    background-color: #cf91e4; /* Efeito de hover */
+    text-decoration: underline; /* Sublinhado no hover */
+    font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff; 
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-bottom: 4px;
+}
+
+.logo img {
+    height: 65px;
+    width: 60px;
+    margin-right: 10px;
+    padding-bottom: -10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #fff;
+    border: none;
+    padding: 13px 30px 14px 8px; /* Dá espaço para o ícone no lado direito */
+    color: black;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 203px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: white;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #C0C0C0;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color:  #c100c1; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b67fdd; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color:  #B77ECA;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #e1b2ff;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdi {
+    color: #C0C0C0;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.mdi:hover {
+    color:  #b77eca;
+}
+
+/* Página de login */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Isso faz com que a página de login ocupe o espaço disponível */
+    padding: 35px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    background-color:  #4F1E64;
+    border-radius: 2px;
+    padding: 20px 30px;
+    width: 80%;
+    max-width: 490px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    height: 510px;
+    margin-bottom: 40px; /* Aqui você pode ajustar a distância */
+    font-size: 20px;
+    color: #fff;
+}
+
+.form-login input::placeholder {
+    color: #808080;
+}
+
+.form-login h1 {
+    font-size: 45px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.form-login label {
+    font-size: 20px;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    margin-bottom: -5px;
+    margin: 3px;
+}
+
+.form-login input {
+    padding: 8px; /*Largura/altura dos formulários*/
+    font-size: 16x; /*Sem comentários*/
+    border-radius: 5px; /*Formato das bordas*/
+    border: 1px solid var(--border-color); /*Tamanho da borda dos formulários*/
+    margin-bottom: 15px; /*Espaçamento dos formulários*/
+    background-color: #fff; /*Fundo dos formulários*/
+    color: black; /*Cor da escrita dos formulários */
+    height: 40px;
+}
+
+.form-login input:focus {
+    border-color: #808080;
+    outline: none;
+}
+
+.form-login a {
+    color: #fff; /*Cor dos botões de "Esqueci minha senha, Não consigo efetuar o login e Cadastre-se"*/
+    font-size: 16px; /*Tamanho da fonte do "Esqueci minha senha, Não consigo efetuar o login e Não possui conta?Cadastre-se"*/
+    margin-bottom: 15px;
+    transition: color 0.3s;
+    margin-bottom: 31px;
+}
+
+.form-login a:hover {
+    color: #c100c1;
+}
+
+/* Mensagens de erro e cadastro */
+.erro-login, .cadastre-se {
+    color: var(--font-color);
+    font-size: 16px;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.form-login button {
+    background-color: #B77ECA; /* Cor de fundo do botão */
+    color: black; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 8px 60px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Família da fonte do botão */
+    border-radius: 5px; /* Arredondamento das bordas do botão */
+    cursor: pointer; /* Cursor de pointer quando o mouse passa sobre o botão */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+    width: 100px;
+    margin: 0 auto;    
+}
+
+.form-login button p {
+    margin-left: -15px;
+}
+
+.form-login button:hover {
+    background-color: #e1b2ff; /* Cor de fundo do botão ao passar o mouse sobre ele */
+}
+
+.footer {
+    padding: 10px;
+    background-color: #200A26;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 100px; /* Define a altura do footer */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    flex-direction: column;
+    display: var(--font-size-large);
+    position: fixed;
+}
+
+.footer .social-icons {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.footer p {
+    color: #fff;
+    font-size: 14px;
+}

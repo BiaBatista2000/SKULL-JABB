@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull Jabb</title>
+    <link rel="shortcut icon" href="imagens/Logo Roxa.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="pointshop.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="home atual.html"><img src="Imagens/Logo Roxa.png" alt="Caveira branca sobre um fogo azul" class="no-underline"></a>
+                <a href="home atual.html" class="no-underline"><span>SKULL <br> JABB</span></a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Procurar...">
+                <i class="mdi mdi-magnify search-icon"></i>
+            </div>
+            <nav class="menu">
+                <a href="home atual.html">Loja</a>
+                <a href="testecb.html">Comunidade</a>
+                <a href="Suporte.html">Suporte</a>
+            </nav>
+            <div class="icons">
+                <button class="btn" id="language-button">Idioma</button>
+                <a href="Login.html"><button class="btn">Login</button> </a>
+                <a href="Carrinho.html"><i class="mdi mdi-cart-outline icone"></i> </a>
+                <a href="Perfil.html"><i class="mdi mdi-camera-outline icone"></i> </a>
+            </div>
+            <div class="dropdown" id="language-options">
+                <div class="language-option" onclick="changeLanguage('pt')">Português</div>
+                <div class="language-option" onclick="changeLanguage('en')">Inglês</div>
+                <div class="language-option" onclick="changeLanguage('es')">Espanhol</div>
+                <div class="language-option" onclick="changeLanguage('fr')">Francês</div>
+                <div class="language-option" onclick="changeLanguage('de')">Alemão</div>
+                <div class="language-option" onclick="changeLanguage('it')">Italiano</div>
+                <div class="language-option" onclick="changeLanguage('ru')">Russo</div>
+                <div class="language-option" onclick="changeLanguage('jp')">Japonês</div>
+                <div class="language-option" onclick="changeLanguage('zh')">Chinês</div>
+                <div class="language-option" onclick="changeLanguage('zh-CN')">Chinês Mandarim</div>
+                <div class="language-option" onclick="changeLanguage('ar')">Árabe</div>
+                <div class="language-option" onclick="changeLanguage('ko')">Coreano</div>
+                <div class="language-option" onclick="changeLanguage('nl')">Holandês</div>
+                <div class="language-option" onclick="changeLanguage('sv')">Sueco</div>
+                <div class="language-option" onclick="changeLanguage('da')">Dinamarquês</div>
+                <div class="language-option" onclick="changeLanguage('fi')">Finlandês</div>
+                <div class="language-option" onclick="changeLanguage('no')">Norueguês</div>
+                <div class="language-option" onclick="changeLanguage('pl')">Polonês</div>
+                <div class="language-option" onclick="changeLanguage('tr')">Turco</div>
+                <div class="language-option" onclick="changeLanguage('hu')">Húngaro</div>
+                <div class="language-option" onclick="changeLanguage('cs')">Tcheco</div>
+            </div>
+        </div>
+    </header>
+
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+
+
+<h1>Loja de Pontos</h1>
+<div class="container">
+    <div class="sidebar">
+        <div class="inventory">
+            <h2 class="text-inventory">Pontos no inventário</h2>
+            <div class="points">
+                <img src="imagens/SJ-removebg-preview.png" alt="Pontos" class="img-pontos">
+                <span>8.600</span>
+            </div>
+        </div>
+        
+        <div class="checkin">
+            <h2 class="text-checkin">Check-in</h2>
+            <div class="checkin-button">
+                <img src="imagens/SJ-removebg-preview.png" alt="Pontos" class="img-pontos">
+                <span>+100</span>
+                <button>Reivindicar</button>
+            </div>
+            <div class="days">
+                <span>S</span>
+                <span>T</span>
+                <span>Q</span>
+                <span>Q</span>
+                <span>S</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="carousel">
+            <div class="section-title"><span>Populares</span></div>
+            
+            <div class="items-container">
+                <div class="items">
+                    <div class="item">
+                        <img src="imagens/unpacking.png" alt="Unpacking">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>650</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/gr.png" alt="Gris">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>525</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/castlestorm.png" alt="CastleStorm">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>212.5</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/ca.png" alt="Castle Crashers">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>275</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/little hoope.avif" alt="Little Hope">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>1375</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/stardew valley.png" alt="Stardew Valley">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>720</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <button class="prev" aria-label="Previous Slide">&#10094;</button>
+            <button class="next" aria-label="Next Slide">&#10095;</button>
+        </div>
+
+        <div class="carousel2">
+            <div class="section-title2"><span>Recomendados</span></div>
+            <div class="items-container">
+                <div class="items">
+                    <div class="item">
+                        <img src="imagens/Loja de Pontos/Cogumelo.png" alt="Cogumelo">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>650</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/Loja de Pontos/Design sem nome.png" alt="Design sem nome">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>650</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/Loja de Pontos/hamster.png" alt="Hamster">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>650</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/Loja de Pontos/s.png" alt="S">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png" alt="Moeda">
+                            <span>650</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="imagens/Loja de Pontos/Kiss.png"  alt="Kiss">
+                        <div class="price">
+                            <img src="imagens/SJ-removebg-preview.png"  alt="Moeda">
+                            <span>650</span>
+                        </div>
+
+                        <div class="dropdownn">
+                            <button class="dropdownn-btn">Selecione uma imagem</button>
+                            <div class="dropdownn-content" id="carousel2">
+                              <div class="dropdownn-item" onclick="showImage('img1')">Cogumelos</div>
+                              <div class="dropdownn-item" onclick="showImage('img2')">Floral</div>
+                              <div class="dropdownn-item" onclick="showImage('img3')">Hamster</div>
+                              <div class="dropdownn-item" onclick="showImage('img4')">Gatinhos</div>
+                              <div class="dropdownn-item" onclick="showImage('img4')">Beijos</div>
+                            </div>
+                          </div>
+                    </div>
+                    
+                </div>
+            </div>
+                <button class="prev" aria-label="Previous Slide">&#10094;</button>
+                <button class="next" aria-label="Next Slide">&#10095;</button>
+        </div>
+
+          
+    </div>
+    
+</div>
+
+<br>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/skulljabb/" target="_blank"><i class="mdi mdi-instagram"></i></a>
+            <a href="#" target="_blank"><i class="mdi mdi-whatsapp"></i></a>
+            <a href="mailto:SkullJabb@gmail.com" target="_blank"><i class="mdi mdi-email-outline"></i></a>
+        </div>
+        <p>&copy; 2024 Skull Jabb - Todos os direitos reservados.</p>
+    </footer>
+    <br>
+<script src="lojadepontos.js"></script>
+</body>
+</html>

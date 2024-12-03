@@ -1,0 +1,804 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+  background-color:  #af22d6;
+  overflow-x: hidden;
+  
+}
+
+header {
+  background-color: #200A26;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CSS do dropdown de idiomas */
+.dropdown {
+  display: none; /* Oculta as opções inicialmente */
+  position: absolute;
+  top:58px; /* Ajuste conforme necessário */
+  right: 62px; /* Ajuste conforme necessário */
+  background-color: #a175af;
+  border: 1.5px solid black;
+  z-index: 100;
+  width: 130px; /* Ajuste a largura conforme necessário */
+  max-height: 200px; /* Altura máxima para o dropdown */
+  overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+  overflow-x: hidden; /* Oculta rolagem horizontal */
+}
+.dropdown::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+  height: 20px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+  border-radius: 10px; /* Borda arredondada do fundo */
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 10px; /* Borda arredondada do "polegar" */
+  height: 70px; /* Aumente o valor conforme necessário */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+  background: #584757; /* Cor do "polegar" ao passar o mouse */
+  border-radius: 10px; /* Borda arredondada do "polegar" */
+}
+
+.dropdown .language-option {
+  text-align: left;
+  padding: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: -10px;
+  word-spacing: -10px; 
+  transition: background-color 0.2s ease; 
+  font-style: normal; 
+}
+
+.dropdown .language-option:hover {
+  background-color: #cf91e4; 
+  text-decoration: underline; 
+  font-style: normal; 
+}
+
+       /* CSS do dropdown de ORDENAÇÃO */
+    
+      .select-container {
+        margin-left: 790px;
+        margin-top: 65px;
+        right: 0;
+        display: none;
+        background-color: #a175aff6;
+        border: 1.5px solid black;
+        z-index: 100;
+        width: 200px;
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 16px;
+        max-height: 200px;
+        height: 180px;
+        overflow-y: auto;
+        box-sizing: border-box;
+        }
+ 
+      
+        .select-container::-webkit-scrollbar {
+         width: 8px; 
+         height: 20px; 
+        }
+ 
+        .select-container::-webkit-scrollbar-track {
+         background: #f1f1f1; 
+         border-radius: 10px; 
+        }
+ 
+       .select-container::-webkit-scrollbar-thumb {
+        background: #6f6f7e; 
+        border-radius: 10px; 
+        }
+ 
+       .select-container::-webkit-scrollbar-thumb:hover {
+        background: #474b58; 
+        }
+ 
+ 
+ .select-container div {
+     text-align: left;
+     padding: 10px;
+     color: #ffffff;
+     cursor: pointer;
+     transition: background-color 0.15s ease, text-decoration 0.15s ease;
+ }
+ 
+ .select-container div:hover {
+     background-color:#cf91e4fd;
+     text-decoration: underline 1px solid #ddd;
+ }
+ 
+ /* Estilos do botão (com a seta) */
+ .button {
+     background-color:  #B77ECA;
+     color: white;
+     border: none;
+     padding: 15px 30px;
+     cursor: pointer;
+     border-radius: 5px;
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: right;
+     width: 246px;
+     font-family: "Inter-Regular", Helvetica;
+     font-weight: 300;
+     font-size: 32px;
+     line-height: normal;
+     text-decoration: underline;
+     margin-top: -1px;
+     margin-left: 675px;
+     transition: color 0.3s ease; /* Suaviza a transição de cor */
+ }
+ 
+ /* Estilo da seta no botão */
+ .button i {
+     margin-left: 10px;
+     width: 0;
+     height: 0;
+     border-left: 8px solid transparent;
+     border-right: 8px solid transparent;
+     border-top: 14px solid white;
+     transition: border-top 0.3s ease, transform 0.3s ease; 
+ }
+ 
+ 
+ .button:hover {
+     color:#7e518d; /* Cor do texto */
+ }
+ 
+ 
+ .button:hover i {
+     border-top-color:#7e518d;; /* Cor da seta */
+ }
+ 
+ 
+ .images {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     margin-top: 100px;
+     gap: 20px;
+ }
+ 
+ .image-item {
+     text-align: center;
+ }
+ 
+ .image-item img {
+     width: 150px;
+     height: 150px;
+     object-fit: cover;
+ }
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #200A26;
+  width: 100vw;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  color: #fff; 
+}
+
+.logo img {
+  height: 70px;
+  margin-right: 10px;
+  display: block;  
+  margin: 0 auto;  
+}
+
+.logo span {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+/* Estiliza o container de busca */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+  background-color: #FFFF;
+  border: none;
+  padding: 8px 30px 8px 8px; /* Dá espaço para o ícone no lado direito */
+  color: #000;
+  margin-left: 20px;
+  border-radius: 5px;
+  width: 200px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+  position: absolute;
+  right: 10px; /* Posição do ícone dentro do container */
+  color: white;
+  font-size: 15px;
+}
+
+
+::placeholder{
+  color: #949494;
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+  display: flex;
+  gap: 30px; /* Maior espaçamento entre os links */
+  flex-grow: 1; /* Faz o menu crescer para o centro */
+  justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  text-decoration: underline; /* Adiciona sublinhado */
+  font-weight: lighter;
+  font-size: 28px;
+  position: relative;
+  transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+  text-align: center;
+  color: #B77ECA; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+  color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+  text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+  gap: 10px; 
+  align-items: center;
+  justify-items: center;
+}
+
+.btn {
+  background-color: #B77ECA;
+  color: white;
+  border: none;
+  padding: 5px 10px; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px; 
+  display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  align-items: center; /* Alinha verticalmente o texto ao centro */
+  justify-content: center; /* Alinha horizontalmente o texto ao centro */
+  height: 25px; /* Ajuste a altura do botão conforme necessário */
+  width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+  background-color: #E1B2FF;
+  color: white;
+}
+
+.mdi {
+  color: white;
+  font-size: 25px;
+  font-weight: normal; /* Define o peso da fonte como normal */
+  cursor: pointer;
+}
+
+.lupa {
+  color: #949494;
+}
+
+.mdi:hover {
+  color: #B77ECA;
+}
+
+.lupa   {
+  color: #949494;
+
+}
+
+/*Página da Lista de Desejo*/
+.Tudo01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.Resumo {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Coloca espaço entre os itens */
+    width: 100%; /* ou ajuste conforme necessário */
+}
+.lista-de-desejo {
+    margin: 0 10px; /* Espaçamento horizontal */
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    margin-left: 200px;
+}
+.Forma {
+    display: flex;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0;
+    width: 100%;
+    max-width: 1305px;
+    height: auto; /* Altura automática para responsividade */
+    margin-bottom: 40px;
+
+}
+
+.Retangulo01 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1293px;
+    height: 700px;
+    background-color: #B77ECA;
+    border-radius: 5px;
+
+}
+
+.Itens {
+    width: 246px;
+    left: 100px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+    white-space: nowrap;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+
+  .Ordenar {
+    text-align: right;
+    width: 246px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: normal;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-left: 675px;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+  }
+  
+  .Ordenar:hover {
+    color:#4c4b57;;
+    text-decoration: underline;
+
+  }
+
+  .Seta {
+    margin-left: 5px;
+    letter-spacing: 5px;
+    width: 100%; /* faz a imagem ocupar 100% do contêiner */
+    height: 45px; /* mantém a proporção da imagem */
+    max-width: 25px;
+    object-fit: cover; /* cobre o espaço disponível sem distorcer */
+    margin-top: 18px;
+  }
+
+
+
+/* Imagem 01 */
+
+.img-1 {
+    width: 365px;
+    top: 84px; /* Ajuste se necessário */
+    position: absolute;
+    height: 205px;
+    object-fit: cover;
+    left: 50px; /* Alinha à esquerda */
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: transform 0.3s;
+   }
+
+.img-1:hover {
+  transform: scale(1.04);
+}
+
+   .the-binding-of-isaac {
+    position: absolute;
+    width: 340px;
+    top: 295px;
+    left: 50px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400px;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+   .Bloco-1 {
+    position: absolute;
+    width: 365px;
+    height: 38px;
+    top: 320px;
+    left: 50px;
+    background-color: #4F1E64;
+    border-radius: 5px;
+  }
+  
+  #Preço-1 {
+    left: 18px;
+    position: absolute;
+    top: 6px;
+    font-family:  "Inter-Regular", Helvetica;
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  /* Imagem 02 */
+
+  .img-2 {
+    width: 365px;
+    top: 84px; /* Ajuste se necessário */
+    position: absolute;
+    height: 205px;
+    object-fit: cover;
+    left: 460px; /* Alinha à esquerda */
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: transform 0.3s;
+   }
+
+.img-2:hover {
+    transform: scale(1.04);
+  }
+   .undertale {
+    position: absolute;
+    width: 340px;
+    top: 295px;
+    left: 460px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+   .Bloco-2 {
+    position: absolute;
+    width: 365px;
+    height: 38px;
+    top: 320px;
+    left: 460px;
+    background-color:  #4F1E64;
+    border-radius: 5px;
+  }
+  
+  #Preço-2 {
+    left: 18px;
+    position: absolute;
+    top: 6px;
+    font-family:  "Inter-Regular", Helvetica;
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  } 
+
+  /* Imagem 03 */
+
+  .img-3 {
+    width: 365px;
+    top: 84px; /* Ajuste se necessário */
+    position: absolute;
+    height: 205px;
+    object-fit: cover;
+    left: 875px; /* Alinha à esquerda */
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: transform 0.3s;
+   }
+
+  .img-3:hover {
+    transform: scale(1.04);
+  }
+   .limbo {
+    position: absolute;
+    width: 340px;
+    top: 295px;
+    left:  875px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+   .Bloco-3 {
+    position: absolute;
+    width: 365px;
+    height: 38px;
+    top: 320px;
+    left: 875px;
+    background-color: #4F1E64;
+    border-radius: 5px;
+  }
+  
+  #Preço-3 {
+    left: 18px;
+    position: absolute;
+    top: 6px;
+    font-family:  "Inter-Regular", Helvetica;
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  } 
+
+  /* Imagem 04 */
+
+.img-4 {
+  width: 365px;
+  top: 400px; /* Ajuste se necessário */
+  position: absolute;
+  height: 205px;
+  object-fit: cover;
+  left: 50px; /* Alinha à esquerda */
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: transform 0.3s;
+ }
+
+.img-4:hover {
+transform: scale(1.04);
+}
+
+ .hollow-knight {
+  position: absolute;
+  width: 340px;
+  top: 611px;
+  left: 50px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .Bloco-4 {
+  position: absolute;
+  width: 365px;
+  height: 38px;
+  top: 636px;
+  left: 50px;
+  background-color: #4F1E64;
+  border-radius: 5px;
+}
+
+#Preço-4 {
+  left: 18px;
+  position: absolute;
+  top: 6px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 900;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Imagem 05 */
+
+.img-5 {
+  width: 365px;
+  top: 400px; /* Ajuste se necessário */
+  position: absolute;
+  height: 205px;
+  object-fit: cover;
+  left: 460px; /* Alinha à esquerda */
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: transform 0.3s;
+ }
+
+.img-5:hover {
+transform: scale(1.04);
+}
+
+ .celeste {
+  position: absolute;
+  width: 340px;
+  top: 611px;
+  left: 460px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .Bloco-5 {
+  position: absolute;
+  width: 365px;
+  height: 38px;
+  top: 636px;
+  left: 460px;
+  background-color:  #4F1E64;
+  border-radius: 5px;
+}
+
+#Preço-5 {
+  left: 18px;
+  position: absolute;
+  top: 6px;
+  font-family:  "Inter-Regular", Helvetica;
+  font-weight: 900;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Imagem 06 */
+
+.img-6 {
+  width: 365px;
+  top: 400px; /* Ajuste se necessário */
+  position: absolute;
+  height: 205px;
+  object-fit: cover;
+  left: 875px; /* Alinha à esquerda */
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: transform 0.3s;
+ }
+
+.img-6:hover {
+transform: scale(1.04);
+}
+
+ .subnautica {
+  position: absolute;
+  width: 340px;
+  top: 611px;
+  left: 875px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+ .Bloco-6 {
+  position: absolute;
+  width: 365px;
+  height: 38px;
+  top: 636px;
+  left: 875px;
+  background-color: #4F1E64;
+  border-radius: 5px;
+}
+
+#Preço-6 {
+  left: 18px;
+  position: absolute;
+  top: 6px;
+  font-family:  "Inter-Regular", Helvetica;
+  font-weight: 900;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Footer */
+
+.footer {
+    padding: 10px;
+    background-color: #200A26;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 100px; /* Define a altura do footer */
+    text-align: center;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    flex-direction: column;
+}
+
+.footer .social-icons {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.footer p {
+    font-size: 14px;
+}
+

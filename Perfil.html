@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Skull Jabb</title>
+        <link rel="shortcut icon" href="Images/Logo Roxa.png" type="image/SkullJabb-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="perfil.css">
+        <script src="perfil.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+    </head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="home atual.html"><img src="Images/Logo Roxa.png" alt="Caveira branca sobre um fogo azul" class="no-underline"></a>
+                <a href="home atual.html" class="no-underline"><span>SKULL <br> JABB</span></a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Procurar...">
+                <i class="mdi mdi-magnify search-icon"></i>
+            </div>
+            <nav class="menu">
+                <a href="home atual.html">Loja</a>
+                <a href="testecb.html">Comunidade</a>
+                <a href="Suporte.html">Suporte</a>
+            </nav>
+            <div class="icons">
+                <button class="btn" id="language-button">Idioma</button>
+                <a href="Login.html"><button class="btn">Login</button> </a>
+                <a href="Carrinho.html"><i class="mdi mdi-cart-outline icone"></i> </a>
+                <a href="Perfil.html"><i class="mdi mdi-camera-outline icone"></i> </a>
+            </div>
+            <div class="dropdown" id="language-options">
+                <div class="language-option" onclick="changeLanguage('pt')">Português</div>
+                <div class="language-option" onclick="changeLanguage('en')">Inglês</div>
+                <div class="language-option" onclick="changeLanguage('es')">Espanhol</div>
+                <div class="language-option" onclick="changeLanguage('fr')">Francês</div>
+                <div class="language-option" onclick="changeLanguage('de')">Alemão</div>
+                <div class="language-option" onclick="changeLanguage('it')">Italiano</div>
+                <div class="language-option" onclick="changeLanguage('ru')">Russo</div>
+                <div class="language-option" onclick="changeLanguage('jp')">Japonês</div>
+                <div class="language-option" onclick="changeLanguage('zh')">Chinês</div>
+                <div class="language-option" onclick="changeLanguage('zh-CN')">Chinês Mandarim</div>
+                <div class="language-option" onclick="changeLanguage('ar')">Árabe</div>
+                <div class="language-option" onclick="changeLanguage('ko')">Coreano</div>
+                <div class="language-option" onclick="changeLanguage('nl')">Holandês</div>
+                <div class="language-option" onclick="changeLanguage('sv')">Sueco</div>
+                <div class="language-option" onclick="changeLanguage('da')">Dinamarquês</div>
+                <div class="language-option" onclick="changeLanguage('fi')">Finlandês</div>
+                <div class="language-option" onclick="changeLanguage('no')">Norueguês</div>
+                <div class="language-option" onclick="changeLanguage('pl')">Polonês</div>
+                <div class="language-option" onclick="changeLanguage('tr')">Turco</div>
+                <div class="language-option" onclick="changeLanguage('hu')">Húngaro</div>
+                <div class="language-option" onclick="changeLanguage('cs')">Tcheco</div>
+            </div>
+        </div>
+    </header>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+<main>
+    <div class="container profile-section">
+        <!-- Seção do Perfil -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <img src="Images/Artist_.jpeg" alt="Foto do perfil" class="profile-pic">
+                        <div class="profile-details">
+                            <h2>Artist</h2>
+                            <p>@Therealartist</p>
+                            <div class="profile-badges">
+                                <img src="Images/+10.png" alt="Emblema 1">
+                                <img src="Images/+100.png" alt="Emblema 2">
+                                <img src="Images/Insígnia básixa.png" alt="Emblema 3">
+                                <span class="badge"><i class="mdi mdi-plus"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="profile-options">
+                    <a href="#" class="profile-links">Editar perfil</a>
+                    <a href="#" class="profile-links">Dados pessoais</a>
+                    <a href="BibliotecaTeste.html" class="profile-links">Biblioteca</a>
+                    <a href="Lista-de-Desejo.html" class="profile-links">Lista de desejos</a>
+                </div>
+            </div>
+            
+
+        <!-- Seção Jogados Recentemente e Amigos -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="recent-games">
+    <h3>Jogados recentemente</h3>
+    <div class="game-item">
+        <img src="images/porco.png" alt="Jogo 1">
+        <div class="game-info">
+            <p>Unpacking</p>
+            <p>Horas: 60,8</p>
+        </div>
+    </div>
+    <div class="game-item">
+        <img src="images/gr.png" alt="Jogo 2">
+        <div class="game-info">
+            <p>GRIS</p>
+            <p>Horas: 12,8</p>
+        </div>
+    </div>
+    <div class="game-item">
+        <img src="images/capsule_616x353 (5).jpg" alt="Jogo 3">
+        <div class="game-info">
+            <p>Into The Pit</p>
+            <p>Horas: 10,5</p>
+        </div>
+    </div>
+    <div class="game-item">
+        <img src="images/pacify.jpg" alt="Jogo 3">
+        <div class="game-info">
+            <p>Pacify</p>
+            <p>Horas: 7,4</p>
+        </div>
+    </div>
+    <div class="game-item">
+        <img src="images/project.jpg" alt="Jogo 3">
+        <div class="game-info">
+            <p>Project Zomboid</p>
+            <p>Horas: 2,5</p>
+        </div>
+    </div>
+
+    <div class="game-item">
+        <img src="images/outland-button-crop-1642583727370.jpg" alt="Jogo 3">
+        <div class="game-info">
+            <p>Outland</p>
+            <p>Horas: 48,4</p>
+        </div>
+    </div>
+
+    <div class="game-item">
+        <img src="images/phasmophobia.jpg" alt="Jogo 3">
+        <div class="game-info">
+            <p>Phasmophobia</p>
+            <p>Horas: 245,7</p>
+        </div>
+    </div>
+
+    <div class="game-item">
+        <img src="images/ca.png" alt="Jogo 3">
+        <div class="game-info">
+            <p>Castle Crashers</p>
+            <p>Horas: 43,8</p>
+        </div>
+    </div>
+    <!-- Outros jogos aparecerão, mas precisarão de rolagem -->
+</div>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="friends-section">
+                    <div class="friends-container">
+                        <div class="friends-column">
+                            <h3>Amigos</h3>
+                            <div class="friends-list">
+                                <div class="friend-item">
+                                    <img src="Images/user 2.png" alt="Starry">
+                                    <div class="friend-info">
+                                        <p>Starry</p>
+                                        <img class="friend-badge" src="Images/Insígnia nível 5.png" alt="Emblema 2">
+                                    </div>
+                                </div>
+                                <div class="friend-item">
+                                    <img src="Images/user 5.png" alt="LittleStar">
+                                    <div class="friend-info">
+                                        <p>LittleStar</p>
+                                        <img class="friend-badge" src="Images/Insígnia nível 2.png" alt="Emblema 2">
+                                    </div>
+                                </div>
+                                <div class="friend-item">
+                                    <img src="Images/user 7.png" alt="Hanni">
+                                    <div class="friend-info">
+                                        <p>Hanni</p>
+                                        <img class="friend-badge" src="Images/Insígnia básixa.png" alt="Emblema 2">
+                                    </div>
+                                </div>
+                                <div class="friend-item">
+                                    <img src="Images/user 8.png" alt="Molly">
+                                    <div class="friend-info">
+                                        <p>Molly</p>
+                                    </div>
+                                </div>
+                                <div class="friend-item">
+                                    <img src="Images/user 9.png" alt="Maggie">
+                                    <div class="friend-info">
+                                        <p>Maggie</p>
+                                    </div>
+                                </div>
+                                <div class="friend-item">
+                                    <img src="Images/user 10.png" alt="Peter">
+                                    <div class="friend-info">
+                                        <p>Peter</p>
+                                    </div>
+                                </div>
+                                <div class="friend-item">
+                                    <img src="Images/user 11.png" alt="James">
+                                    <div class="friend-info">
+                                        <p>James</p>
+                                    </div>
+                                </div>
+                                <!-- Adicione mais amigos aqui -->
+                            </div>
+                        </div>
+                        <div class="requests-column">
+                            <h3>Solicitações</h3>
+                            <div class="request-item">
+                                <img src="Images/user 1.png" alt="Yumi">
+                                <div class="request-info">
+                                    <p>Yumi</p>
+                                    <button class="btn btn-success btn-sm thumb-up"><i class="mdi mdi-thumb-up"></i></button>
+                                    <button class="btn btn-danger btn-sm thumb-down"><i class="mdi mdi-thumb-down"></i></button>
+
+                                </div>
+                            </div>
+                            <div class="request-item">
+                                <img src="Images/user 4.png" alt="Anny">
+                                <div class="request-info">
+                                    <p>Anny</p>
+                                    <button class="btn btn-success btn-sm thumb-up"><i class="mdi mdi-thumb-up"></i></button>
+                                    <button class="btn btn-danger btn-sm thumb-down"><i class="mdi mdi-thumb-down"></i></button>
+                                </div>
+                            </div>
+                            <div class="request-item">
+                                <img src="Images/user 6.png" alt="Bunny">
+                                <div class="request-info">
+                                    <p>Bunny</p>
+                                    <button class="btn btn-success btn-sm thumb-up"><i class="mdi mdi-thumb-up"></i></button>
+                                    <button class="btn btn-danger btn-sm thumb-down"><i class="mdi mdi-thumb-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</main>
+
+  
+<br>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/skulljabb/" target="_blank"><i class="mdi mdi-instagram"></i></a>
+            <a href="#" target="_blank"><i class="mdi mdi-whatsapp"></i></a>
+            <a href="mailto:SkullJabb@gmail.com" target="_blank"><i class="mdi mdi-email-outline"></i></a>
+        </div>
+        <p>&copy; 2024 Skull Jabb - Todos os direitos reservados.</p>
+    </footer>
+    <br>
+
+</body>
+</html>

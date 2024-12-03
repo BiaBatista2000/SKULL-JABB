@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull Jabb</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/SkullJabb-Rosa.png" type="image/Skull-Jabb">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="Lista.de.Desejo.css" />
+   
+</head>
+<body>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a class="skulljabb" href="home atual.html"><img src="imagens/Logo Roxa.png" alt="Caveira branca sobre um fogo azul"></a>
+                <a class="skulljabb" href="home atual.html"><span>SKULL <br> <center> JABB </center></span></a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Procurar... " class="search-bar">
+                <i class="mdi mdi-magnify search-icon lupa"></i> 
+            </div>
+            <nav class="menu">
+                <a href="home atual.html">Loja</a>
+                <a href="testecb.html">Comunidade</a>
+                <a href="testecb.html">Suporte</a>
+            </nav>
+            <div class="icons">
+                <button class="btn" id="language-button">Idioma</button>
+                <a href="Login.html"><button class="btn">Login</button> </a>
+                <a href="Carrinho.html"><i class="mdi mdi-cart-outline icone"></i> </a>
+                <a href="Perfil.html"><i class="mdi mdi-camera-outline icone"></i> </a>
+            </div>
+            <div class="dropdown" id="language-options">
+                <div class="language-option" onclick="changeLanguage('pt')">Português</div>
+                <div class="language-option" onclick="changeLanguage('en')">Inglês</div>
+                <div class="language-option" onclick="changeLanguage('es')">Espanhol</div>
+                <div class="language-option" onclick="changeLanguage('fr')">Francês</div>
+                <div class="language-option" onclick="changeLanguage('de')">Alemão</div>
+                <div class="language-option" onclick="changeLanguage('it')">Italiano</div>
+                <div class="language-option" onclick="changeLanguage('ru')">Russo</div>
+                <div class="language-option" onclick="changeLanguage('jp')">Japonês</div>
+                <div class="language-option" onclick="changeLanguage('zh')">Chinês</div>
+                <div class="language-option" onclick="changeLanguage('zh-CN')">Chinês Mandarim</div>
+                <div class="language-option" onclick="changeLanguage('ar')">Árabe</div>
+                <div class="language-option" onclick="changeLanguage('ko')">Coreano</div>
+                <div class="language-option" onclick="changeLanguage('nl')">Holandês</div>
+                <div class="language-option" onclick="changeLanguage('sv')">Sueco</div>
+                <div class="language-option" onclick="changeLanguage('da')">Dinamarquês</div>
+                <div class="language-option" onclick="changeLanguage('fi')">Finlandês</div>
+                <div class="language-option" onclick="changeLanguage('no')">Norueguês</div>
+                <div class="language-option" onclick="changeLanguage('pl')">Polonês</div>
+                <div class="language-option" onclick="changeLanguage('tr')">Turco</div>
+                <div class="language-option" onclick="changeLanguage('hu')">Húngaro</div>
+                <div class="language-option" onclick="changeLanguage('cs')">Tcheco</div>
+            </div>
+        </div>
+      </header>
+
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+
+      <span class="Tudo01"> 
+        <div class="Resumo">
+            <p class="lista-de-desejo">Lista de Desejo</p>
+        </div>
+      </span>
+
+      <br >
+
+      <div class="Forma">
+        <div class="Retangulo01">
+            <div class="Itens">Itens</div>
+            <!-- Substituição do botão Ordenar -->
+            <button class="button" id="order-button">
+                Ordenar <i id="arrow"></i> 
+            </button>
+            <div id="order-select" class="select-container">
+                <div data-value="az">A - Z</div>
+                <div data-value="za">Z - A</div>
+                <div data-value="precos">Preços</div>
+                <div data-value="descontos">Descontos</div>
+                <div data-value="data-lancamento">Data de Lançamento</div>
+                <div data-value="personalizada">Personalizada</div>
+                <div data-value="novos">Novos</div>
+            </div>
+
+            <br />
+
+            <img class="img-1" src="img/The-Binding-of-Isaac (1).jpg" />
+            <div class="the-binding-of-isaac"><p>The Binding Of Isaac</p></div>
+            <div class="Bloco-1">
+            <div id="Preço-1"><p>Preço R$25,99</p></div>
+            </div>
+            
+            <img class="img-2" src="img/Undertale (1).png" />
+            <div class="undertale"><p>Undertale</p></div>
+            <div class="Bloco-2">
+            <div id="Preço-2"><p>Preço R$15,99</p></div>
+            </div>
+
+            <img class="img-3" src="img/Limbo.png" />
+            <div class="limbo"><p>Limbo</p></div>
+            <div class="Bloco-3">
+            <div id="Preço-3"><p>Preço R$37,99</p></div>
+            </div>
+            
+            <img class="img-4" src="img/Hollow-Knight (1).png" />
+            <div class="hollow-knight"><p>Hollow Knight</p></div>
+            <div class="Bloco-4">
+            <div id="Preço-4"><p>Preço R$46,99</p></div>
+            </div>
+
+            <img class="img-5" src="img/Celeste.jpg" />
+            <div class="celeste"><p>Celeste</p></div>
+            <div class="Bloco-5">
+            <div id="Preço-5"><p>Preço R$46,99</p></div>
+            </div>
+
+            <img class="img-6" src="img/Subnautica (1).png" />
+            <div class="subnautica"><p>Subnautica</p></div>
+            <div class="Bloco-6">
+            <div id="Preço-6"><p>Preço R$46,99</p></div>
+            </div>
+      </div>
+      </div>
+      <script src="Lista-de-Desejo.js"></script>
+
+      <br /><br />
+      <br /><br /><br />
+      <br /><br />
+   
+      <footer class="footer">
+       <div class="social-icons">
+           <a href="https://www.instagram.com/skulljabb/" target="_blank"><i class="mdi mdi2 mdi-instagram icone"></i> </a>
+           <a href="#" target="_blank"> <i class="mdi mdi2 mdi-whatsapp icone"></i> </a>
+           <a href="mailto:SkullJabb@gmail.com" target="_blank"><i class="mdi mdi2 mdi-email-outline"></i> </a>
+       </div>
+       <p>&copy; 2024 Skull Jabb - Todos os direitos reservados.</p>
+   </footer>
+
+      
+</body>
+</html>

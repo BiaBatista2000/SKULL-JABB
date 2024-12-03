@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: lighter;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family:'Quicksand', sans-serif ;
+    background-color: #8901CF;
+    overflow-x: hidden;
+    
+}
+
+/* Header */
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* CSS do dropdown de idiomas */
+.dropdown {
+    display: none; /* Oculta as opções inicialmente */
+    position: absolute;
+    top:58px; /* Ajuste conforme necessário */
+    right: 62px; /* Ajuste conforme necessário */
+    background-color: #a175af;
+    border: 1.5px solid black;
+    z-index: 100;
+    width: 130px; /* Ajuste a largura conforme necessário */
+    max-height: 200px; /* Altura máxima para o dropdown */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    overflow-x: hidden; /* Oculta rolagem horizontal */
+}
+.dropdown::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 20px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do fundo */
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+    height: 70px; /* Aumente o valor conforme necessário */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #584757; /* Cor do "polegar" ao passar o mouse */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+}
+
+.dropdown .language-option {
+    text-align: left;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: -10px;
+    word-spacing: -10px; /* Ajuste o valor conforme necessário */
+    transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+    font-style: normal; /* Garante que o texto não fique em itálico */
+}
+
+.dropdown .language-option:hover {
+    background-color: #cf91e4; /* Efeito de hover */
+    text-decoration: underline; /* Sublinhado no hover */
+    font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff; 
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-bottom: 4px;
+}
+
+.logo img {
+    height: 65px;
+    width: 60px;
+    margin-right: 10px;
+    padding-bottom: -10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #fff;
+    border: none;
+    padding: 13px 30px 14px 8px; /* Dá espaço para o ícone no lado direito */
+    color: #000;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 203px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #c0c0c0;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color: #9188ff; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color: #b77eca;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #e1b2ff;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdi {
+    color: #c0c0c0;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.mdi:hover {
+    color: #b77eca;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+
+.banner {
+    position: relative; /* Torna o container um ponto de referência para os botões */
+    display: flex; /* Usa flexbox para alinhamento dos slides */
+    overflow: hidden; /* Garante que nada saia do container */
+    width: 100%;
+}
+
+.banner-slide {
+    position: relative; /* Define o container da imagem como referência para os botões */
+    flex: 1; /* Faz com que os slides se expandam igualmente */
+    max-width: 100%; /* Limita a largura dos slides para 100% do container pai */
+}
+
+.banner-slide img {
+    max-width: 100%; /* Ajusta a largura máxima da imagem (ajuste conforme necessário) */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem dentro do container */
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.banner-menu {
+    position: absolute; /* Posiciona os botões sobre as imagens */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o ponto central do menu */
+    display: flex; /* Alinha os botões lado a lado */
+    gap: 5px; /* Espaço entre os botões */
+    width: auto; /* Ajusta a largura conforme necessário */
+    text-align: center; /* Alinha o texto dos botões ao centro */
+}
+
+.banner-menu a {
+    color: white; /* Cor do texto dos botões */
+    background-color: #200A26; /* Fundo semi-transparente para destaque */
+    padding: 10px 20px; /* Espaço interno dos botões */
+    border-radius: 5px; /* Bordas arredondadas dos botões */
+    text-decoration: none; /* Remove o sublinhado dos botões */
+    font-size: 18px; /* Tamanho do texto dos botões */
+    display: inline-block; /* Faz com que os botões sejam blocos inline */
+}
+
+.banner-menu a:hover {
+    background-color: #B77ECA; /* Fundo um pouco mais escuro ao passar o mouse */
+}
+
+
+.main {
+    display: flex;
+    min-height: calc(100vh - 99px); /* Ajusta a altura da área principal para considerar a altura do footer */
+    margin-bottom: 0; /* Remove qualquer margem inferior */
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px; /* Largura fixa da sidebar */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Deixa a sidebar no fluxo da página */
+
+}
+
+.section {
+    margin-top: 5px;
+    margin: 0; /* Remove qualquer margem dos botões */
+    padding: 0;
+}
+
+.section button {
+    margin-top: 5px;
+    background-color: #B77ECA;
+    color: white;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 100px; /* Ajuste a altura do botão conforme necessário */
+    width: 100%; /* Ocupa toda a largura da sidebar */
+    margin: 0; /* Remove margens internas do botão */
+    padding: 0;
+    width: 200px;
+    height: 144px;
+}
+
+.section button:hover {
+    background-color: #e1b2ff;
+    color: black;
+}
+
+h3 {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.content {
+    flex-grow: 1; /* Faz o conteúdo ocupar o restante do espaço */
+    padding: 20px;
+}
+
+.promotions {
+    position: relative; /* Torna o container da imagem um ponto de referência para o texto */
+    text-align: center; /* Centraliza a imagem horizontalmente dentro do container */
+}
+
+.promotions img {
+    display: inline-block; /* Faz com que a imagem seja tratada como um bloco inline */
+    max-width: 100%; /* Ajusta a largura da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    opacity: 0.8; /* Define a opacidade da imagem */
+    margin-bottom: 20px;
+}
+
+
+.promo-text {
+    position: absolute; /* Posiciona o texto em relação ao container .promotions */
+    top: 50%; /* Centraliza o texto verticalmente */
+    left: 50%; /* Centraliza o texto horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o centro do texto */
+    color: white; /* Cor do texto */
+    font-size: 24px; /* Tamanho do texto */
+    font-weight: normal; /* Negrito para destaque */
+    text-align: center; /* Alinha o texto ao centro */
+    text-decoration: underline; /* Remove o sublinhado do link */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.promo-text:hover {
+    color: #200A26; /* Cor diferente ao passar o mouse */
+}
+
+
+
+
+.carousels {
+    display: flex;
+    flex-direction: column; /* Coloca os carrosséis em linhas separadas */
+    gap: 20px; /* Espaço entre os carrosséis */
+}
+
+.carousel {
+    position: relative; /* Permite o posicionamento dos botões de navegação */
+    width: 100%; /* Ajusta a largura do carrossel */
+    overflow: hidden; /* Esconde o conteúdo que está fora do container */
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: calc(150px * 4 + 10px * 3); /* Largura para exibir 4 imagens */
+}
+
+.game-list {
+    display: flex; /* Alinha os itens horizontalmente */
+    transition: transform 0.5s ease-in-out; /* Suaviza a transição ao rolar */
+    width: calc(150px * 12 + 10px * 11); /* Largura total para todas as imagens e espaçamentos, incluindo as clonadas */
+    margin-left: 50px;
+}
+
+.game-list img {
+    border-radius: 5px;
+    width: 120px; /* Ajusta o tamanho das imagens conforme necessário */
+    height: auto; /* Mantém a proporção das imagens */
+    margin-right: 10px; /* Espaço entre as imagens */
+    margin-top: 10px
+}
+
+.cup {
+    border-radius: 5px;
+    width: 120px; /* Ajusta o tamanho das imagens conforme necessário */
+    height: auto; /* Mantém a proporção das imagens */
+    margin-right: 10px; /* Espaço entre as imagens */
+    margin-top: 10px
+}
+
+
+/* Ajusta o carrossel para exibir apenas 4 itens de cada vez */
+.carousel-container {
+    width: calc(150px * 9 + 10px * 3); /* Ajusta a largura do container para 4 imagens e espaçamentos */
+    margin-right: 5px;
+    margin-left: 35px;
+}
+
+.game-list {
+    width: calc(150px * 10 + 10px * 7); /* Ajusta a largura total para todas as imagens e espaçamentos */
+}
+
+/* Botões de Navegação (Opcional) */
+.prev, .next {
+    border-radius: 5px;
+    position: absolute; /* Posiciona os botões dentro do container */
+    top: 50%; /* Alinha verticalmente */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical dos botões */
+    background-color: #242432c0; /* Fundo semi-transparente para os botões */
+    color: white; /* Cor do texto dos botões */
+    border: none; /* Remove bordas dos botões */
+    padding: 15px; /* Aumenta o espaço interno dos botões */
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    z-index: 0; /* Garante que os botões fiquem acima das imagens */
+}
+
+.prev {
+    left: 20px; /* Aumenta o espaço entre o botão "anterior" e a borda esquerda */
+}
+
+.next {
+    right: 20px; /* Aumenta o espaço entre o botão "próximo" e a borda direita */
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #200A26;
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin-top: -70px;
+    position: fixed;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-bottom: 10px; /* Espaçamento abaixo dos ícones */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b77eca; /* Cor ao passar o mouse nos ícones */
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+    z-index: 15;
+}

@@ -1,0 +1,689 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis globais */
+:root {
+    --primary-color: #3A415A;
+    --secondary-color: #242432;
+    --hover-color: #9188ff;
+    --font-color: white;
+    --font-color-secondary: #FDFDFD;
+    --font-size-large: 28px;
+    --border-color: white;
+}
+
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background-image: url('img/Fundo.png');
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #200A26;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;    
+}
+
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* CSS do dropdown de idiomas */
+.dropdown {
+    display: none; /* Oculta as opções inicialmente */
+    position: absolute;
+    top:58px; /* Ajuste conforme necessário */
+    right: 62px; /* Ajuste conforme necessário */
+    background-color: #a175af;
+    border: 1.5px solid black;
+    z-index: 100;
+    width: 130px; /* Ajuste a largura conforme necessário */
+    max-height: 200px; /* Altura máxima para o dropdown */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    overflow-x: hidden; /* Oculta rolagem horizontal */
+}
+.dropdown::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 20px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do fundo */
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+    height: 70px; /* Aumente o valor conforme necessário */
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #584757; /* Cor do "polegar" ao passar o mouse */
+    border-radius: 10px; /* Borda arredondada do "polegar" */
+}
+
+.dropdown .language-option {
+    text-align: left;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: -10px;
+    word-spacing: -10px; /* Ajuste o valor conforme necessário */
+    transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+    font-style: normal; /* Garante que o texto não fique em itálico */
+}
+
+.dropdown .language-option:hover {
+    background-color: #cf91e4; /* Efeito de hover */
+    text-decoration: underline; /* Sublinhado no hover */
+    font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff; 
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-bottom: 4px;
+}
+.logo img {
+    height: 65px;
+    width: 60px;
+    margin-right: 10px;
+    padding-bottom: -10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #fff;
+    border: none;
+    padding: 13px 30px 14px 8px; /* Dá espaço para o ícone no lado direito */
+    color: #000;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 203px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #c0c0c0;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color: #b77eca; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color: #b77eca;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #e1b2ff;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdi {
+    color: #c0c0c0;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.mdi:hover {
+    color: #b77eca;
+}
+
+.container {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 40px; /* Garante espaço entre o header e o botão */
+    text-align: center; /* Centraliza o conteúdo do container */
+  }
+  
+  .botao {
+    background-color: #4F1E64; /* Cor de fundo semelhante ao da imagem */
+    color: white; /* Cor do texto */
+    align-items: center;
+    margin-top: -30px;
+    padding: 15px 200px; /* Espaçamento interno */
+    border-radius: 3px; /* Bordas arredondadas */
+    border: none; /* Remove a borda padrão */
+    font-size: 26px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Necessário para alinhar o sublinhado */
+  }
+  
+  .botao::after {
+    content: ''; /* Adiciona o sublinhado */
+    display: block;
+    width: 60%; /* Tamanho do sublinhado */
+    height: 2px; /* Espessura da linha */
+    background-color: white; /* Cor da linha */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: absolute;
+    bottom: 8px; /* Define a posição abaixo do texto */
+    left: 0;
+    right: 0;
+  }
+
+
+.botao-two {
+    background-color: #4F1E64; /* Cor de fundo semelhante ao botão "Meu Carrinho" */
+    color: black; /* Cor do texto */
+    padding: 15px 40px; /* Espaçamento interno igual ao botão */
+    border-radius: 3px; /* Bordas arredondadas iguais ao botão */
+    font-size: 25px; /* Tamanho da fonte igual ao botão */
+    width: fit-content; /* Garante que a largura seja ajustada ao conteúdo, assim como o botão */
+    margin-top: -22px; /* Espaçamento superior */
+    height: 350px;
+    width: 563px;
+    margin-left: 20px;
+
+}
+
+.botao-two::after {
+    display: block;
+    background-color: white; /* Cor da linha */
+    position: absolute;
+}
+
+.forma-pagamento {
+    font-size: 28px;
+    color: white;
+}
+
+.linha-divisoria {
+    width: 116,5%; /* Define o tamanho da linha */
+    margin-top: 10px; /* Espaçamento acima da linha */
+    margin-bottom: -1px; /* Espaçamento abaixo da linha */
+    margin-left: -20px;
+    border: 1px solid #ffff;
+    margin: -40px;
+    margin-top: 10px;
+}
+
+.continuar {
+  background-color: transparent; /* Cor inicial do botão */
+  color: white; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno (vertical e horizontal) */
+  border: 1px solid black;
+  border-radius: 3px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor ao passar por cima */
+  font-size: 25px; /* Tamanho da fonte */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza a transição */
+  display: inline-block; /* Garante que o botão se ajuste ao conteúdo */
+  transition: color 0.3s ease;
+  margin-top: 40px;
+  width: 300px;
+  height: 50px;
+
+}
+
+.continuar:hover {
+    background-color: #b77eca; /* Cor ao passar o mouse */
+    border: none;
+}
+
+
+.botao-three::after {
+    display: block;
+    width: 60%; /* Tamanho do sublinhado */
+    height: 2px; /* Espessura da linha */
+    background-color: white; /* Cor da linha */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: absolute;
+    bottom: 8px; /* Define a posição abaixo do texto */
+    left: 0;
+    right: 0;
+  }
+
+
+.botao-three {
+    background-color: #4F1E64; /* Cor de fundo semelhante ao botão "Meu Carrinho" */
+    color: black; /* Cor do texto */
+    padding: 15px 20px; /* Espaçamento interno igual ao botão */
+    border-radius: 3px; /* Bordas arredondadas iguais ao botão */
+    font-size: 22px; /* Tamanho da fonte igual ao botão */
+    width: fit-content; /* Garante que a largura seja ajustada ao conteúdo, assim como o botão */
+    margin-top: -20px; /* Espaçamento superior */
+    height: 200px;
+    width: 563px;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+  
+.pontos-ganhar {
+    background: #b77eca;
+    border-radius: 3px;
+    font-size: 22px;
+    padding: 10px 30px ;
+    margin-top: 20px;
+    height: 60px;
+}
+
+.paragrafo {
+    text-align: center;
+    transform: translateY(-53px); /* Substitua -10px pela quantidade desejada */
+
+}
+
+.numero {
+    font-size: 30px; /* Escolha o tamanho que você quiser */
+    font-weight: bold; /* Opcional, caso queira deixar o número em negrito */
+    color: black; /* Se quiser mudar a cor do número */
+    margin-left: 10px;  /* Espaço à esquerda da palavra */
+    margin-right: 1px; /* Espaço à direita da palavra */
+
+}
+
+.moeda {
+    width: 44px;
+    margin-left: -25px;
+    top: 733px;
+
+}
+
+.container-four {
+    display: flex;
+    justify-content: flex-end; /* Alinha a div à direita */
+}
+
+.div-four {
+    display: flex;
+    align-items: center; /* Isso alinha verticalmente a seta e o texto ao centro */
+    background-color: #4F1E64; 
+    padding: 10px 195px; /* Ajuste o padding se necessário */
+    color: white;
+    height: 56px; 
+    margin-bottom: -900px;
+    border-radius: 3px;
+    font-size: 30px; 
+    margin-right: 15px;
+    transform: translateY(-750px); /* Ajusta a seta para cima */
+
+}
+
+.seta {
+    width: 55px;
+    height: 56px;
+    border: none;
+    background-color: #4F1E64;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transform: translateY(-650px);
+    margin-left: 628px;
+}
+
+.seta:hover {
+    background-color: #b77eca;
+}
+
+.teste {
+    font-size: 20px;
+    margin-top: -200px;
+    text-align: center;
+    transform: translateY(-198px);
+    margin-left: 90px;
+
+}
+
+.white-separator {
+    border-top: 2px solid white; /* Define a linha branca */
+    margin: 20px 0; /* Adiciona espaçamento acima e abaixo da linha */
+    max-width: 700px;
+    transform: translateY(-211px);
+    margin-left: 628px;
+    
+}
+
+.white-separator-two {
+    border-top: 2px solid white; /* Define a linha branca */
+    margin: 20px 0; /* Adiciona espaçamento acima e abaixo da linha */
+    max-width: 700px;
+    transform: translateY(-125px);
+    margin-left: 628px;
+}
+
+.container-five {
+    display: flex;
+    justify-content: flex-end; /* Alinha a div à direita */
+}
+
+.div-five {
+    display: flex; /* Usar flexbox para alinhar a imagem e o texto */
+    align-items: center; /* Alinha a imagem e o texto verticalmente ao centro */
+    background-color: #4F1E64; 
+    padding: 250px 180px; /* Ajuste o padding conforme necessário */
+    height: 56px; 
+    margin-bottom: 100px;
+    margin-top: -673px;
+    border-radius: 3px;
+    margin-right: 15px;
+    width: 700px;
+}
+
+.h1 {
+    font-size: 30px;
+    text-decoration: underline;
+    margin: -50px;
+    margin-left: -20px;
+    object-fit: cover;
+    margin-bottom: 235px;
+    margin-inline-start: 40px;
+    margin-inline-end: -95px;
+    white-space: nowrap; /* Garante que o texto não quebre para a próxima linha */
+}
+
+.span {
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 95px;
+    white-space: nowrap; 
+    margin-left: -120px;
+    margin-bottom: 200px;
+}
+
+.h2 {
+    font-size: 30px;
+    text-decoration: underline;
+    margin: -50px;
+    margin-left: -60px;
+    object-fit: cover;
+    margin-bottom: 235px;
+    margin-inline-start: 40px;
+    margin-inline-end: -95px;
+    white-space: nowrap; /* Garante que o texto não quebre para a próxima linha */
+
+
+}
+.span-two {
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 95px;
+    white-space: nowrap; 
+    margin-left: -255px;
+    margin-bottom: 170px;
+}
+
+.span-three {
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 95px;
+    white-space: nowrap; 
+    margin-left: -255px;
+    margin-bottom: 140px;
+}
+
+.span-four{
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 95px;
+    white-space: nowrap; 
+    margin-left: -300px;
+    margin-bottom: 110px;
+}
+
+.span-five {
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 95px;
+    white-space: nowrap; 
+    margin-left: -310px;
+    margin-bottom: 80px;
+}
+
+.span-six {
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 95px;
+    white-space: nowrap; 
+    margin-left: -300px;
+    margin-bottom: 50px;
+}
+
+.span-seven {
+    text-decoration: none;
+    font-size: 15px;
+    white-space: nowrap; 
+    margin-left: -650px;
+    margin-bottom: -10px;
+    height: -620px;
+}
+
+.cupom {
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.form-cupom {
+    border: 1px solid black;
+    padding: 100px;
+}
+
+.hollow-knight {
+    width: 340px;
+    margin-bottom: 230px; 
+    margin-left: -150px;
+    object-fit: cover;
+
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.input-box {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #4F1E64;
+    outline: none;
+    margin-top: -450px;
+    max-width: 300px;
+    max-height: 900px;
+    margin-left: 684px;
+    transform: translateY(-403px);
+    margin-top: 220px; /* ajuste o valor para aumentar a distância */
+}
+
+label {
+    font-size: 18px;
+    color: white;
+    display: block; /* para que o label fique acima do input */
+}
+
+.subtotal {
+    font-size: 45px;
+    margin-top: -450px;
+    margin-left: 684px;
+    transform: translateY(-190px);
+    margin-top: 220px; /* ajuste o valor para aumentar a distância */
+}
+
+.valor{
+    font-size: 45px;
+    margin-left: 1080px;
+    margin-top: -240px; /* ajuste o valor para aumentar a distância */
+}
+
+
+.aplicar {
+    background-color: #b77eca;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 40px;
+    margin-top: -450px;
+    max-width: 200px;
+    margin-left: 1070px;
+}
+
+.aplicar:hover {
+    background-color: #e1b2ff;
+    color: white;
+}
+
+.new-div {
+    background-color: #4F1E64; /* Cor de fundo similar */
+    padding: 10px; /* Espaçamento interno */
+    margin: 20px 15px; /* Margem superior e inferior e alinhamento lateral igual ao container-five */
+    border-radius: 3px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    width: 700px; /* Mesma largura que a div-five */
+    margin-bottom: 90px;
+    margin-left: 628px;
+    margin-top: -155px;
+}
+
+.info {
+    font-size: 16px;
+    text-align: left;
+
+}
+
+.img-informacoes {
+    width: 25px;
+    margin: -5px;
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #200A26;
+    color: white;
+    text-align: center;
+    width: 100%;
+    top: 540px;
+    position: fixed;
+    left: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-bottom: 10px; /* Espaçamento abaixo dos ícones */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b77eca; /* Cor ao passar o mouse nos ícones */
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}

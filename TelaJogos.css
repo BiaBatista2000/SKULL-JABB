@@ -1,0 +1,518 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #9d22ba;
+    color: var(--font-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* CSS do dropdown de idiomas */
+    .dropdown {
+        display: none; /* Oculta as opções inicialmente */
+        position: absolute;
+        top:58px; /* Ajuste conforme necessário */
+        right: 62px; /* Ajuste conforme necessário */
+        background-color: #a175af;
+        border: 1.5px solid black;
+        z-index: 100;
+        width: 130px; /* Ajuste a largura conforme necessário */
+        max-height: 200px; /* Altura máxima para o dropdown */
+        overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+        overflow-x: hidden; /* Oculta rolagem horizontal */
+    }
+    .dropdown::-webkit-scrollbar {
+        width: 8px; /* Largura da barra de rolagem */
+        height: 20px;
+    }
+
+    .dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+        border-radius: 10px; /* Borda arredondada do fundo */
+    }
+
+    .dropdown::-webkit-scrollbar-thumb {
+        background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+        border-radius: 10px; /* Borda arredondada do "polegar" */
+        height: 70px; /* Aumente o valor conforme necessário */
+    }
+
+    .dropdown::-webkit-scrollbar-thumb:hover {
+        background: #584757; /* Cor do "polegar" ao passar o mouse */
+        border-radius: 10px; /* Borda arredondada do "polegar" */
+    }
+
+    .dropdown .language-option {
+        text-align: left;
+        padding: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        margin-bottom: -10px;
+        word-spacing: -10px; /* Ajuste o valor conforme necessário */
+        transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+        font-style: normal; /* Garante que o texto não fique em itálico */
+    }
+
+    .dropdown .language-option:hover {
+        background-color: #cf91e4; /* Efeito de hover */
+        text-decoration: underline; /* Sublinhado no hover */
+        font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+    }
+
+.no-underline {
+    text-decoration: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff; 
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-bottom: 4px;
+}
+
+.logo img {
+    height: 65px;
+    width: 60px;
+    margin-right: 10px;
+    padding-bottom: -10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #fff;
+    border: none;
+    padding: 13px 30px 14px 8px; /* Dá espaço para o ícone no lado direito */
+    color: #000;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 203px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #c0c0c0;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color: #9188ff; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color: #b77eca;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #e1b2ff !important;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdi {
+    color: #c0c0c0;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.mdi:hover {
+    color: #b77eca !important;
+}
+
+.genre-button {
+    background-color: #b77eca; /* Cor de fundo verde */
+    color: white; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 5px 10px; /* Preenchimento interno */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove sublinhados */
+    display: inline-block; /* Mantém na linha */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 2px; /* Margem externa */
+    cursor: pointer; /* Cursor como ponteiro */
+    border-radius: 5px; /* Borda arredondada */
+    transition: background-color 0.3s; /* Transição suave para cor de fundo */
+}
+.genre-button:hover {
+    background-color: #e1b2ff; /* Mudança de cor ao passar o mouse */
+}
+
+  .button-container, .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  .image-container {
+    display: flex;
+  }
+  .image-container img {
+    width: 50px; 
+    margin: 10px;
+  }
+  .user-settings button {
+    background-color: #b77eca;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    text-align: left;
+  }
+  .user-settings button:hover {
+    background-color: #e1b2ff;
+    color: black;
+
+  }
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.game-info {
+    display: flex;
+    background-color: #4b2383;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.game-info img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.game-details {
+    margin-left: 20px;
+    width: 50%;
+}
+
+.game-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.game-details p {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+    color: white;
+}
+
+.game-details .btn {
+    background-color: #a175af;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    grid-template-columns: 1fr;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+.game-details .btn:hover{
+    color:black;
+    transition: all;
+}
+
+.game-details .Classificação{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #a175af;
+    border-radius: 5px;
+    width: 300px ;
+    height:auto ;
+}
+
+.clas {
+    margin-right: 10px;
+}
+
+.game-details .genre{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #a175af;
+    border-radius: 5px;
+    width: 300px ;
+    height:auto ;
+}
+.game-details .language {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #a175af;
+    border-radius: 5px;
+    width: 300px ;
+    height:auto ;
+
+}
+
+.game-details .rating img {
+    margin-right: 10px; 
+}
+
+.extras {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+.comments {
+    width: 35%;
+    background-color: #a175af;
+    padding: 10px;
+    border-radius: 10px;
+    height: 450px; /*Aumenta aqui a altura dos comentarios*/
+    margin-right: 20px;
+
+}
+.comments h2 {
+    margin-bottom: 20px;
+}
+
+.comment {
+    background-color: #a175af;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.comments img{
+    border-radius: 5px;
+}
+
+
+.achievements {
+    width: 50%;
+    height: 450px;
+    background-color: #a175af;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.achievements h2 {
+    margin-bottom: 20px;
+}
+
+.achievements img {
+    width: 45%;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.achievements a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #FFFFFF;
+}
+.achievements a:hover{
+    color: #a175af;
+}
+
+
+.extra-content {
+    display: flex;
+    flex-direction: column; 
+    width: 45%; 
+    background-color: #a175af;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.extra-content .content-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.extra-content img {
+    width: 48%;
+    border-radius: 5px;
+}
+
+.achievements, .comments, .extra-content {
+    width: 50%; 
+}
+.extra-content h2 {
+    margin-bottom: 20px;
+}
+.produto {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    background-color: #a175af;
+  }
+
+  .imagens {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .valores {
+    display: flex;
+    justify-content: space-between;
+  }
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #200A26;
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    margin-bottom: -10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-bottom: 10px; /* Espaçamento abaixo dos ícones */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b77eca; /* Cor ao passar o mouse nos ícones */
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.no-underline {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white;
+    font-family: system-ui, apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

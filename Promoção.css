@@ -1,0 +1,484 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #9d22ba;
+    color: var(--font-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #200A26;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* CSS do dropdown de idiomas */
+    .dropdown {
+        display: none; /* Oculta as opções inicialmente */
+        position: absolute;
+        top:58px; /* Ajuste conforme necessário */
+        right: 62px; /* Ajuste conforme necessário */
+        background-color: #a175af;
+        border: 1.5px solid black;
+        z-index: 100;
+        width: 130px; /* Ajuste a largura conforme necessário */
+        max-height: 200px; /* Altura máxima para o dropdown */
+        overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+        overflow-x: hidden; /* Oculta rolagem horizontal */
+    }
+    .dropdown::-webkit-scrollbar {
+        width: 8px; /* Largura da barra de rolagem */
+        height: 20px;
+    }
+
+    .dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+        border-radius: 10px; /* Borda arredondada do fundo */
+    }
+
+    .dropdown::-webkit-scrollbar-thumb {
+        background: #7b6f7e; /* Cor do "polegar" da barra de rolagem */
+        border-radius: 10px; /* Borda arredondada do "polegar" */
+        height: 70px; /* Aumente o valor conforme necessário */
+    }
+
+    .dropdown::-webkit-scrollbar-thumb:hover {
+        background: #584757; /* Cor do "polegar" ao passar o mouse */
+        border-radius: 10px; /* Borda arredondada do "polegar" */
+    }
+
+    .dropdown .language-option {
+        text-align: left;
+        padding: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        margin-bottom: -10px;
+        word-spacing: -10px; /* Ajuste o valor conforme necessário */
+        transition: background-color 0.2s ease; /* Suaviza a transição do hover */
+        font-style: normal; /* Garante que o texto não fique em itálico */
+    }
+
+    .dropdown .language-option:hover {
+        background-color: #cf91e4; /* Efeito de hover */
+        text-decoration: underline; /* Sublinhado no hover */
+        font-style: normal; /* Garante que o texto não fique em itálico ao passar o mouse */
+    }
+
+.no-underline {
+    text-decoration: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #200A26;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff; 
+    line-height: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-bottom: 4px;
+}
+
+.logo img {
+    height: 65px;
+    width: 60px;
+    margin-right: 10px;
+    padding-bottom: -10px;
+    display: block;  /* Garante que a imagem seja um bloco separado */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+.logo span {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+/* Estiliza o container de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Espaço entre a barra de busca e o menu */
+}
+
+/* Estiliza a barra de busca */
+.search-bar {
+    background-color: #fff;
+    border: none;
+    padding: 13px 30px 14px 8px; /* Dá espaço para o ícone no lado direito */
+    color: #000;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 203px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o ícone de lupa */
+.search-icon {
+    position: absolute;
+    right: 10px; /* Posição do ícone dentro do container */
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+
+::placeholder{
+    color: #c0c0c0;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Maior espaçamento entre os links */
+    flex-grow: 1; /* Faz o menu crescer para o centro */
+    justify-content: center; /* Centraliza os links no meio */
+}
+
+.menu a {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    text-decoration: underline; /* Adiciona sublinhado */
+    font-weight: lighter;
+    font-size: 28px;
+    position: relative;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.menu a.active {
+    text-align: center;
+    color: #9188ff; /* Cor roxa quando ativo */
+}
+
+.menu a:hover {
+    color: #b77eca; /* Mesmo tom de roxo ao passar o mouse */
+    text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Coloca os ícones e botões em duas colunas */
+    gap: 10px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.btn {
+    background-color: #b77eca;
+    color: white;
+    border: none;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px; 
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto ao centro */
+    justify-content: center; /* Alinha horizontalmente o texto ao centro */
+    height: 25px; /* Ajuste a altura do botão conforme necessário */
+    width: auto; /* Ajusta a largura conforme o conteúdo */
+}
+
+.btn:hover {
+    background-color: #e1b2ff !important;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdi {
+    color: #c0c0c0;
+    font-size: 25px;
+    font-weight: normal; /* Define o peso da fonte como normal */
+    cursor: pointer;
+}
+
+.mdi:hover {
+    color: #b77eca !important;
+}
+
+/* Mantém o estilo de conteúdo centralizado */
+.content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para o h2 */
+h2 {
+    color: white;
+    text-align: center !important;
+    margin: 0;
+}
+
+/* Ajustes no carrossel para garantir que o banner-menu fique acima */
+.carousel-container-bottom {
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative; /* Garante que o menu fique acima do carrossel */
+}
+
+.carousel-container-bottom .carousel {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilos das imagens no carrossel */
+.carousel-container-bottom .carousel img {
+    width: 300px;
+    max-width: 700px;
+    max-height: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.carousel-container-bottom .carousel img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Define uma largura máxima para o carrossel e o centraliza */
+.popular-carousel {
+    max-width: 900px; /* Ajuste esse valor conforme necessário */
+    margin: 0 auto; /* Centraliza o carrossel */
+    position: relative; /* Garante que as setas fiquem posicionadas dentro do carrossel */
+}
+
+/* Estilos para garantir que as imagens tenham o mesmo tamanho */
+.popular-carousel {
+    overflow: hidden;
+    padding: 0 5px; /* Adiciona um espaçamento de 5px nas laterais de cada item */
+    box-sizing: border-box; /* Garante que o padding não afete o layout */
+    text-align: center;
+}
+
+/* Ajusta o tamanho da imagem e seu comportamento */
+.popular-carousel img {
+    width: 100%; /* Isso já faz com que as imagens ocupem a largura do contêiner */
+    height: 350px; /* Aumente ou diminua esse valor para ajustar a altura */
+    object-fit: cover; /* Garante que a imagem preencha todo o espaço sem distorcer */
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+    display: block;
+}
+
+/* Estilo para a legenda abaixo de cada imagem */
+.carousel-caption {
+    font-size: 16px; /* Tamanho da fonte da legenda */
+    color: white; /* Cor do texto da legenda */
+    margin-top: 8px; /* Espaçamento entre a imagem e a legenda */
+    font-weight: 500; /* Peso da fonte para destaque */
+    position: relative; /* Remove qualquer influência de posicionamento absoluto */
+    bottom: 0; /* Posiciona a legenda na parte inferior da imagem */
+    text-align: center; /* Centraliza a legenda */
+    padding: 10px;
+    background-color: transparent; /* Fundo semitransparente */
+    font-weight: lighter;
+    border-radius: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Ajuste para os botões de navegação */
+.popular-carousel .slick-prev,
+.popular-carousel .slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste para centralizar */
+    cursor: pointer;
+    z-index: 2; /* Garante que fique sobre a imagem */
+}
+
+/* Ajuste de posicionamento das setas */
+.popular-carousel .slick-prev {
+    left: 10px; /* Ajuste da distância da borda esquerda */
+}
+
+.popular-carousel .slick-next {
+    right: 10px; /* Ajuste da distância da borda direita */
+}
+
+/* Estilo do ícone dentro do botão */
+.popular-carousel .slick-prev i,
+.popular-carousel .slick-next i {
+     display: none;
+}
+
+/* Ajustes de espaçamento e layout */
+.popular-carousel {
+    overflow: hidden; /* Garante que a imagem fique contida */
+    box-sizing: border-box;
+  }
+  
+  .popular-carousel img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    max-height: 450px;
+    transition: transform 0.3s ease;
+  }
+
+.carousel-item {
+    overflow: hidden;
+    padding: 0 5px; /* Adiciona um espaçamento de 5px nas laterais de cada item */
+    box-sizing: border-box; /* Garante que o padding não afete o layout */
+    text-align: center;
+    overflow: hidden; /* Garante que a imagem fique contida */
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 300px; /* Isso já faz com que as imagens ocupem a largura do contêiner */
+    height: 200px; /* Aumente ou diminua esse valor para ajustar a altura */
+}
+
+.botton {
+    width: 50px;
+    height: 40px;
+    background-color: #200A26; /* Cor de fundo inicial */
+    color: white; /* Cor do texto */
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transform: translateY(-200px);
+    margin-left: 110px;
+  }
+  
+  .botton:hover {
+    background-color: #4b2383; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+  }
+
+  .botton-two {
+    width: 50px;
+    height: 40px;
+    background-color: #200A26; /* Cor de fundo inicial */
+    color: white; /* Cor do texto */
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transform: translateY(-240px);
+    margin-left: 1200px;
+  }
+  
+  .botton-two:hover {
+    background-color: #4b2383; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+  }
+
+.mdi:hover {
+    color: white;
+}
+
+.mdi-two:hover {
+    color: #ffff;
+    background-color: black;
+}
+
+.simulador {
+    font-weight: lighter;
+    background-color: #4b2383;
+    color: white;
+    margin-left: -10px;
+    text-decoration: underline 3px;
+    font-size: 45px;
+    height: 80px;
+    width: 915px;
+    border-radius: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* CSS */
+.container-simulador {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+  }
+  
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #200A26;
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    margin-bottom: -10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-bottom: 10px; /* Espaçamento abaixo dos ícones */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b77eca; /* Cor ao passar o mouse nos ícones */
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}
